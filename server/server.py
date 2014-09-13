@@ -1,12 +1,61 @@
 import asyncore
 import socket
+import lib.repolist
+
 
 class PAASCmdHandler(asyncore.dispatcher_with_send):
 
+    def get_repo_list(self):
+	#lib.repolist.get_repolist()
+	return lib.repolist.get_repolist()
+    
+    def setup_docker(name):
+	print name
+	return "238429"
+
     def handle_read(self):
         data = self.recv(8192)
-        if data:
-            self.send(data)
+	arguments = data.split()
+
+	for token in arguments:
+            print(token)
+	    if token == "repolist":
+		returnmsg = self.get_repo_list()
+		print returnmsg
+		self.send(returnmsg)
+	    if token == "setup":
+		returnmsg = self.setup_docker()
+		print returnmsg
+		self.send(returnmsg)
+	#    if token == "repolist":
+	#	returnmsg = self.get_repo_list()
+	#	print returnmsg
+	#	self.send(returnmsg)	
+	#    if token == "repolist":
+	#	returnmsg = self.get_repo_list()
+	#	print returnmsg
+	#	self.send(returnmsg)
+	#    if token == "repolist":
+	#	returnmsg = self.get_repo_list()
+	#	print returnmsg
+	#	self.send(returnmsg)
+	#    if token == "repolist":
+	#	returnmsg = self.get_repo_list()
+	#	print returnmsg
+	#	self.send(returnmsg)
+	#    if token == "repolist":
+	#	returnmsg = self.get_repo_list()
+	#	print returnmsg
+	#	self.send(returnmsg)
+	#    if token == "repolist":
+	#	returnmsg = self.get_repo_list()
+	#	print returnmsg
+	#	self.send(returnmsg)
+	#    if token == "repolist":
+	#	returnmsg = self.get_repo_list()
+	#	print returnmsg
+	#	self.send(returnmsg)		
+	
 
 class PAASServer(asyncore.dispatcher):
 

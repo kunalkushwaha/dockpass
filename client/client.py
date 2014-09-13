@@ -1,45 +1,53 @@
-import asyncore, socket
+import socket
 import argparse
 
-class PAASClient(asyncore.dispatcher):
 
-    def __init__(self, host, path, buff):
-        asyncore.dispatcher.__init__(self)
-        self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.connect( (host, 8080) )
-        self.buffer = 'Hello World'
 
-    def handle_connect(self):
-	print "Connected"
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client_socket.connect(('localhost', 8080))
+
+def useArguments(args):
+
+    if args.repolist:
+        client_socket.send("repolist " + args.repolist)
         pass
-
-    def handle_close(self):
-	print "Closed"
-        self.close()
-
-    def handle_read(self):
-	#print "Reading"	
-        print self.recv(8192)
-	exit()
-
-    def writable(self):
-	#print "Writable.."
-        return (len(self.buffer) > 0)
-
-    def handle_write(self):
-	#print "writeing..."
-        sent = self.send(self.buffer)
-	self.buffer = self.buffer[sent:]
-	
+    if args.setup:
+        client_socket.send("setup " + args.setup)
+        pass
+    if args.instance:
+        client_socket.send("instance " + args.instance)
+        pass
+    if args.rmi:
+        client_socket.send("rmi " + args.rmi)
+    if args.instancelist:
+        client_socket.send("instancelist " + args.instancelist)
+    if args.init:
+        client_socket.send("init " + args.init)
+    if args.add:
+        client_socket.send("add " + args.add)
+    if args.push:
+        client_socket.send("push " + args.push)
+    if args.pull:
+        client_socket.send("pull " + args.pull)
+      
 
 
 parser = argparse.ArgumentParser(description='DocPAAS Client')
-parser.add_argument('repolist', metavar='-rl', help='list all enviornment image at server')
-parser.add_argument('setup', metavar='-s', help='Setup environment for specified repo ')
-#p = PASSCmdLine(parser)
-args = parser.parse_args()
-print args
+parser.add_argument('-l','--repolist', help='list all enviornment image at server')
+parser.add_argument('-s','--setup', help='Setup environment for specified repo ')
+parser.add_argument('-i','--instance', help='Setup environment for specified repo ')
+parser.add_argument('-r','--rmi', help='remove/delete the instance ')
+parser.add_argument('-il','--instancelist', help='instance list ')
+parser.add_argument('-init','--init', help='git init ')
+parser.add_argument('-add','--add', help='git add ')
+parser.add_argument('-push','--push', help='git push')
+parser.add_argument('-pull','--pull', help='git pull ')
 
-if args.repolist == "232":
-	client = PAASClient('localhost', '/',args.setup)
-	asyncore.loop()
+args = parser.parse_args()
+useArguments(args)
+
+data = client_socket.recv(512)
+print data
+client_socket.close()
+
+

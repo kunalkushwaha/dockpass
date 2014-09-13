@@ -12,6 +12,15 @@ class PAASCmdHandler(asyncore.dispatcher_with_send):
     def setup_docker(name):
 	print name
 	return "238429"
+    
+    def rmi(self):
+	return "rmi"
+
+    def instancelist(self):
+	return "instancelist"
+	
+    
+    
 
     def handle_read(self):
         data = self.recv(8192)
@@ -27,14 +36,14 @@ class PAASCmdHandler(asyncore.dispatcher_with_send):
 		returnmsg = self.setup_docker()
 		print returnmsg
 		self.send(returnmsg)
-	#    if token == "repolist":
-	#	returnmsg = self.get_repo_list()
-	#	print returnmsg
-	#	self.send(returnmsg)	
-	#    if token == "repolist":
-	#	returnmsg = self.get_repo_list()
-	#	print returnmsg
-	#	self.send(returnmsg)
+	    if token == "rmi":
+		returnmsg = self.rmi()
+		print returnmsg
+		self.send(returnmsg)	
+	    if token == "instancelist":
+		returnmsg = self.instancelist()
+		print returnmsg
+		self.send(returnmsg)
 	#    if token == "repolist":
 	#	returnmsg = self.get_repo_list()
 	#	print returnmsg

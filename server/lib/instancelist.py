@@ -8,8 +8,13 @@ def get_image_list():
                   version='1.12',
                   timeout=10)
    
-    msg = c.containers(quiet=False, all=False, trunc=True, latest=False, since=None,
-             before=None, limit=-1)
+ #   msg = c.containers(quiet=False, all=False, trunc=True, latest=False, since=None,
+  #           before=None, limit=-1)
  
-    return json.dumps(msg)
-    
+   # return json.dumps(msg)
+    docker_ps = 'docker ps'
+    #os.system(docker_build)
+    output = subprocess.check_output(docker_ps, shell=True)
+    print output
+    return(output);
+ 

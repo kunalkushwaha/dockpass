@@ -9,7 +9,7 @@ client_socket.connect(('localhost', 8080))
 def useArguments(args):
 
     if args.repolist:
-        client_socket.send("repolist ")
+        client_socket.send("repolist " + "null")
         pass
     if args.setup:
         client_socket.send("setup " + args.setup)
@@ -17,7 +17,7 @@ def useArguments(args):
     if args.rmi:
         client_socket.send("rmi " + args.rmi)
     if args.instancelist:
-        client_socket.send("instancelist ")
+        client_socket.send("instancelist " + "null")
     if args.init:
         client_socket.send("init " + args.init)
     if args.add:

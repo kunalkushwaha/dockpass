@@ -1,6 +1,8 @@
 import asyncore
 import socket
 import lib.repolist
+import lib.setup
+import lib.instancelist
 
 
 class PAASCmdHandler(asyncore.dispatcher_with_send):
@@ -9,41 +11,39 @@ class PAASCmdHandler(asyncore.dispatcher_with_send):
 	#lib.repolist.get_repolist()
 	return lib.repolist.get_repolist()
     
-    def setup_docker(name):
-	print name
-	return "238429"
+    def setup_docker(self, tag):
+	print "executing setup"
+	return lib.setup.do_docker_setup(tag)
+	#return "setup"
     
     def rmi(self):
 	return "rmi"
 
     def instancelist(self):
-	return "instancelist"
-	
-    
-    
+	#return "OK"
+	return lib.instancelist.get_image_list()
 
     def handle_read(self):
         data = self.recv(8192)
-	arguments = data.split()
+	token, value = data.split()
+	print token
+	print value
 
-	for token in arguments:
-            print(token)
-	    if token == "repolist":
-		returnmsg = self.get_repo_list()
-		print returnmsg
-		self.send(returnmsg)
-	    if token == "setup":
-		returnmsg = self.setup_docker()
-		print returnmsg
-		self.send(returnmsg)
-	    if token == "rmi":
-		returnmsg = self.rmi()
-		print returnmsg
-		self.send(returnmsg)	
-	    if token == "instancelist":
-		returnmsg = self.instancelist()
-		print returnmsg
-		self.send(returnmsg)
+	if token == "repolist":
+	    returnmsg = self.get_repo_list()
+	    self.send(returnmsg)
+	if token == "setup":
+	    #returnmsg = self.setup_docker(value)
+	    self.send(self.setup_docker(value))
+	    
+	if token == "rmi":
+	    returnmsg = self.rmi()
+	    print returnmsg
+	    self.send(returnmsg)	
+	if token == "instancelist":
+	    returnmsg = self.instancelist()
+	    print returnmsg
+	    self.send(returnmsg)
 	#    if token == "repolist":
 	#	returnmsg = self.get_repo_list()
 	#	print returnmsg
@@ -79,7 +79,7 @@ class PAASServer(asyncore.dispatcher):
         pair = self.accept()
         if pair is not None:
             sock, addr = pair
-            print 'Incoming connection from %s' % repr(addr)
+            #print 'Incoming connection from %s' % repr(addr)
             handler = PAASCmdHandler(sock)
 
 server = PAASServer('localhost', 8080)

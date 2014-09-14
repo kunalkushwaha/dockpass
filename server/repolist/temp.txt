@@ -1,0 +1,195 @@
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
+Step 0 : FROM dockerfile/nodejs
+ ---> c734efbbc592
+Step 1 : EXPOSE 8080 80
+ ---> Using cache
+ ---> cc4adee2aea7
+Step 2 : RUN apt-get install git
+ ---> Using cache
+ ---> 4d02fac7e658
+Step 3 : RUN mkdir -p /gitserver/nodejs.git
+ ---> Using cache
+ ---> f956e3446fa7
+Step 4 : RUN git init --bare --shared /gitserver/nodejs.git
+ ---> Using cache
+ ---> e1216570f541
+Successfully built e1216570f541
